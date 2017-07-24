@@ -10,19 +10,21 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    
+    // 2画面目のLabelを、StoryboardでこのViewControllerにIBOutletとして接続しておく
     @IBOutlet weak var label: UILabel!
     
     // 受け取るためのプロパティ（変数）を宣言しておく
-    var x:Int = 0
+    var x:String = "a"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        // 上記では、x, y を 0 と宣言していたが、
+        // 上記では、string型のxを a と仮で宣言していたが、
         // 1画面目のViewControllerから遷移するときにprepareForSegueで
-        // x, yの値を新たに代入されたので両方共 1 が入っている
+        // xに新たに値（名前）が代入されたので 名前 が入って表示される
         let result = x
         label.text = "こんにちは、 \(result) さん"
     }

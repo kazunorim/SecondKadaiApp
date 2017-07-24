@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // textField の情報を受け取るための delegate を設定
+        textField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +29,7 @@ class ViewController: UIViewController {
         // segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
-        resultViewController.x = 1
+        resultViewController.x = textField.text!
     }
 
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
