@@ -15,18 +15,18 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     // 受け取るためのプロパティ（変数）を宣言しておく
-    var x:String = "a"
+    var temp:String = "a"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        // 上記では、string型のxを a と仮で宣言していたが、
+        // 上記では、string型のtempを a と仮で宣言していたが、
         // 1画面目のViewControllerから遷移するときにprepareForSegueで
-        // xに新たに値（名前）が代入されたので 名前 が入って表示される
-        let result = x
-        label.text = "こんにちは、 \(result) さん"
+        // xに新たに値（name）が代入されたので 名前 が入って表示される
+        let name = temp
+        label.text = "こんにちは、 \(name) さん"
     }
 
     override func didReceiveMemoryWarning() {

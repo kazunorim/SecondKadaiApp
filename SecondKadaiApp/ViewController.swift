@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
-        resultViewController.x = textField.text!
+        resultViewController.temp = textField.text!
     }
 
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
